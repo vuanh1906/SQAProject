@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Shop</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/gird.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/css.gg/icons/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style> 
+
+      .products-container {
+        max-width: 1250px;
+        margin: 0 auto;
+        margin-top: 50px;
+        display: flex;
+        padding-bottom: 100px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .products-container i {
+        font-size: 25px;
+        color: coral;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .product-header {
+        width: 100%;
+        max-width: 1250px;
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 auto;
+        background-color: chocolate;
+        height: 50px;
+        border-radius: 5px;
+
+      }
+
+      .product-title {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        border-bottom: 1px solid black;
+      }
+
+      .quantity {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid black;
+
+      }
+
+      .price {
+        width: 15%;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+      }
+
+      .product  {
+        width: 45%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+      }
+
+      .total {
+        width: 10%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid black;
+      }
+
+      .product i {
+        cursor: pointer;
+      }
+
+      .products {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .products img {
+        max-width: 50%;
+      }
+
+      .basketTotalContainer {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 0;
+        width: 100%;
+      }
+      .basketTotal {
+        width: 10%;
+        padding: 0 55px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <!-- mobile -->
+      <div class="mobile-menu bg-seceond">
+        <a href="" class="mb-logo">KShop</a>
+        <span class="mb-menu-toggle" id="mb-menu-toggle">
+          <i class="gg-menu"></i>
+        </span>
+      </div>
+
+      <!-- main header -->
+      <div class="header-wrapper" id="header-wrapper">
+        <span class="mb-menu-toggle mb-menu-close" id="mb-menu-close">
+          <i class="gg-close"></i>
+        </span>
+        <!-- top header -->
+        <div class="bg-second">
+          <div class="top-header container">
+            <ul class="devided">
+              <li>
+                <a href="#">+840123456789</a>
+              </li>
+              <li>
+                <a href="#">kshop@mail.com</a>
+              </li>
+            </ul>
+            <ul class="devided">
+              <li class="dropdown">
+                <a href="">USD</a>
+                <i class="bx bxs-chevron-down"></i>
+                <ul class="dropdown-content">
+                  <li><a href="#">VND</a></li>
+                  <li><a href="#">JPY</a></li>
+                  <li><a href="#">EUR</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="">ENGLISH</a>
+                <i class="bx bxs-chevron-down"></i>
+                <ul class="dropdown-content">
+                  <li><a href="#">VIETNAMESE</a></li>
+                  <li><a href="#">JAPANESE</a></li>
+                  <li><a href="#">FRENCH</a></li>
+                  <li><a href="#">SPANISH</a></li>
+                </ul>
+              </li>
+              <li><a href="#">ORDER TRACKING</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- mid header -->
+        <div class="bg-main">
+          <div class="mid-header container">
+            <a href="index.html" class="logo">KShop</a>
+            <div class="search">
+              <input type="text" placeholder="Search" />
+              <i class="bx bx-search"></i>
+            </div>
+            <ul class="user-menu">
+              <li>
+                <a href="#"><i class="bx bx-bell"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bx bx-user-circle"></i></a>
+              </li>
+              <li class="cart">
+                <a href="#"
+                  ><i class="bx bx-cart-alt"></i>
+                  <span
+                    style="
+                      font-size: 15px;
+                      margin-left: -10px;
+                      font-weight: 700;
+                      color: red;
+                    "
+                    >0</span
+                  >
+                </a>
+                <!-- <div class="cart-list cart-list-no-cart">
+                  <img src="images/no_cart.png" class="img-no-cart" />
+                  <span class="no-cart-msg"> Empty </span>
+                </div> -->
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- bottom header -->
+        <div class="bg-second">
+          <div class="bottom-header container">
+            <ul class="main-menu">
+              <li><a href="index.html">home</a></li>
+              <li class="mega-dropdown">
+                <a href="product.html"
+                  >shop <i class="bx bxs-chevron-down"></i>
+                </a>
+                <!-- mega menu -->
+                <div class="mega-content">
+                  <div class="row">
+                    <div class="col-3 col-md-12">
+                      <div class="box">
+                        <h3>Categories</h3>
+                        <ul>
+                          <li><a href="#">Keychron-K1</a></li>
+                          <li><a href="#">Keychron-K2</a></li>
+                          <li><a href="#">Keychron-K3</a></li>
+                          <li><a href="#">Keychron-K4</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-C1</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-3 col-md-12">
+                      <div class="box">
+                        <h3>Categories</h3>
+                        <ul>
+                          <li><a href="#">Keychron-K1</a></li>
+                          <li><a href="#">Keychron-K2</a></li>
+                          <li><a href="#">Keychron-K3</a></li>
+                          <li><a href="#">Keychron-K4</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-C1</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="col-3 col-md-12">
+                      <div class="box">
+                        <h3>Categories</h3>
+                        <ul>
+                          <li><a href="#">Keychron-K1</a></li>
+                          <li><a href="#">Keychron-K2</a></li>
+                          <li><a href="#">Keychron-K3</a></li>
+                          <li><a href="#">Keychron-K4</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-C1</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-3 col-md-12">
+                      <div class="box">
+                        <h3>Categories</h3>
+                        <ul>
+                          <li><a href="#">Keychron-K1</a></li>
+                          <li><a href="#">Keychron-K2</a></li>
+                          <li><a href="#">Keychron-K3</a></li>
+                          <li><a href="#">Keychron-K4</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-K6</a></li>
+                          <li><a href="#">Keychron-C1</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row img-row">
+                    <div class="col-3">
+                      <div class="box">
+                        <img src="images/Banner.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box">
+                        <img src="images/Banner.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box">
+                        <img src="images/Banner.jpg" alt="" />
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="box">
+                        <img src="images/Banner.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#">blog</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="products-container">
+      <div class="product-header">
+        <h5 class="product-title">
+          Product
+        </h5>
+        <h5 class="price">
+          Price
+        </h5>
+        <h5 class="quantity">
+          Quantity
+        </h5>
+        <h5 class="total">
+          Total
+        </h5>
+      </div>
+      <div class="products">
+        
+      </div>
+    </div>
+
+    <footer class="bg-second" id="color-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 col-md-6">
+            <h3 class="footer-head">Product</h3>
+            <ul class="menu">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Cotact Us</a></li>
+              <li><a href="#">Product help</a></li>
+              <li><a href="#">oder status</a></li>
+              <li><a href="#">Error</a></li>
+            </ul>
+          </div>
+          <div class="col-3 col-md-6">
+            <h3 class="footer-head">Services</h3>
+            <ul class="menu">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Cotact Us</a></li>
+              <li><a href="#">Product help</a></li>
+              <li><a href="#">oder status</a></li>
+              <li><a href="#">Error</a></li>
+            </ul>
+          </div>
+          <div class="col-3 col-md-6">
+            <h3 class="footer-head">Support</h3>
+            <ul class="menu">
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Cotact Us</a></li>
+              <li><a href="#">Product help</a></li>
+              <li><a href="#">oder status</a></li>
+              <li><a href="#">Error</a></li>
+            </ul>
+          </div>
+          <div class="col-3 col-md-6 col-sm-12">
+            <div class="contact">
+              <h3 class="contact-header">KShop</h3>
+              <ul class="contact-socials">
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-facebook-circle"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-instagram-alt"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-github"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="bx bxl-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="subscribe">
+              <input type="email" placeholder="Enter your Email..." />
+              <button>subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- js -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
